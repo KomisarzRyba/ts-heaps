@@ -1,0 +1,294 @@
+[
+  {
+    "name": "Heap.ts",
+    "path": "Heap.ts",
+    "content": {
+      "structured": {
+        "description": "A `Heap` class and three subclasses: `Min`, `Max`, and `Heap`. The `Heap` class provides a base implementation for sorting and maintaining a priority queue, while the subclasses extend the `Heap` class to provide specific implementations for minimizing or maximizing the priority queue. The code uses passive voice and avoids first-person pronouns, while keeping responses concise and formal.",
+        "items": [
+          {
+            "id": "12c20f7d-81eb-2986-f34a-bcd330276861",
+            "ancestors": [],
+            "description": "Manages a collection of items that are ordered according to a priority queue, allowing for efficient insertion, extraction, and manipulation of elements.",
+            "interfaces": [],
+            "superclass": null,
+            "is_abstract": false,
+            "fields": [
+              {
+                "name": "items",
+                "type_name": "number[]",
+                "description": "Used to store the elements of the heap."
+              }
+            ],
+            "name": "Heap",
+            "location": {
+              "start": 2,
+              "insert": 2,
+              "offset": "\t",
+              "indent": 1,
+              "comment": null
+            },
+            "item_type": "class",
+            "length": 41,
+            "docLength": null
+          },
+          {
+            "id": "b144735e-6489-ae85-824f-d1e6eb4e1000",
+            "ancestors": [
+              "12c20f7d-81eb-2986-f34a-bcd330276861"
+            ],
+            "description": "Performs a value exchange between two elements in the heap, rearranging their positions in the array to maintain the heap property.",
+            "params": [
+              {
+                "name": "a",
+                "default_value": null,
+                "optional": false,
+                "type_name": "number",
+                "description": "Used to represent an index of a item in the `items` array that needs to be swapped with another item."
+              },
+              {
+                "name": "b",
+                "default_value": null,
+                "optional": false,
+                "type_name": "number",
+                "description": "Used to represent the second item to be swapped with the first item passed as `a`."
+              }
+            ],
+            "usage": {
+              "language": "typescript",
+              "code": "// Creating a new instance of Heap class\nlet heap = new Heap();\n\n// Adding items to the heap\nheap.push(10);\nheap.push(5);\nheap.push(20);\n\n// Swapping two indices in the heap\nheap.swap(0, 1);\n",
+              "description": "\nThis code creates a new instance of the Heap class and adds three elements to it using the `push` method. It then swaps two indices in the heap using the `swap` method."
+            },
+            "name": "swap",
+            "location": {
+              "start": 19,
+              "insert": 19,
+              "offset": "\t",
+              "indent": 2,
+              "comment": null
+            },
+            "item_type": "function",
+            "length": 3,
+            "docLength": null
+          },
+          {
+            "id": "bf585a6a-ac97-c7aa-6248-70f08f078450",
+            "ancestors": [
+              "12c20f7d-81eb-2986-f34a-bcd330276861"
+            ],
+            "description": "Adds an item to the heap and re-heapifies the items if the number of items exceeds 1.",
+            "params": [
+              {
+                "name": "item",
+                "default_value": null,
+                "optional": false,
+                "type_name": "number",
+                "description": "Used to add an item to an array."
+              }
+            ],
+            "usage": null,
+            "name": "push",
+            "location": {
+              "start": 26,
+              "insert": 26,
+              "offset": "\t",
+              "indent": 2,
+              "comment": null
+            },
+            "item_type": "function",
+            "length": 5,
+            "docLength": null
+          },
+          {
+            "id": "530a0cc7-18ab-3c9a-714d-e3c032fc198d",
+            "ancestors": [
+              "12c20f7d-81eb-2986-f34a-bcd330276861"
+            ],
+            "description": "Returns the largest item in the heap's collection, or `null` if the heap is empty.",
+            "params": [],
+            "returns": {
+              "type_name": "number | null",
+              "description": "The first item of an array `items`."
+            },
+            "usage": {
+              "language": "typescript",
+              "code": "const heap = new Heap();\nheap.push(4);\nheap.push(5);\nheap.push(2);\nheap.peek(); // returns 4\nheap.pop(); // removes and returns 4\nheap.peek(); // returns 5\n",
+              "description": ""
+            },
+            "name": "peek",
+            "location": {
+              "start": 31,
+              "insert": 31,
+              "offset": "\t",
+              "indent": 2,
+              "comment": null
+            },
+            "item_type": "function",
+            "length": 4,
+            "docLength": null
+          },
+          {
+            "id": "79660884-919d-21b5-5e41-68d455a6e193",
+            "ancestors": [
+              "12c20f7d-81eb-2986-f34a-bcd330276861"
+            ],
+            "description": "Retrieves and returns the topmost element from the heap, while maintaining the heap property by reassigning the top element to the bottom of the heap and reheaping it down.",
+            "params": [],
+            "returns": {
+              "type_name": "number | null",
+              "description": "The value of the top item in the heap."
+            },
+            "usage": {
+              "language": "typescript",
+              "code": "const myHeap = new Heap();\nmyHeap.push(1); // Adds element 1 to the heap.\nmyHeap.push(3); // Adds element 3 to the heap.\nmyHeap.push(2); // Adds element 2 to the heap.\nconst top = myHeap.pop(); // Removes and returns the top element from the heap, which is 1.\n",
+              "description": ""
+            },
+            "name": "pop",
+            "location": {
+              "start": 35,
+              "insert": 35,
+              "offset": "\t",
+              "indent": 2,
+              "comment": null
+            },
+            "item_type": "function",
+            "length": 7,
+            "docLength": null
+          },
+          {
+            "id": "cb3312f8-ef99-eb99-894d-468dc8504abf",
+            "ancestors": [],
+            "description": "Extends the `Heap` class and provides two methods for maintaining a min-heap: `heapifyUp()` and `heapifyDown()`. These methods ensure that the elements in the heap are arranged in a specific order, with the smallest element at the top of the heap.",
+            "interfaces": [],
+            "superclass": "Heap",
+            "is_abstract": false,
+            "fields": [],
+            "name": "Min",
+            "location": {
+              "start": 44,
+              "insert": 44,
+              "offset": "\t",
+              "indent": 1,
+              "comment": null
+            },
+            "item_type": "class",
+            "length": 28,
+            "docLength": null
+          },
+          {
+            "id": "423c2f25-cf61-d087-c747-b1e58435a5b0",
+            "ancestors": [
+              "cb3312f8-ef99-eb99-894d-468dc8504abf"
+            ],
+            "description": "Rearranges elements in a heap-like data structure to maintain the parent-child relationship and ensure that the root element is always greater than or equal to its children.",
+            "params": [],
+            "usage": {
+              "language": "typescript",
+              "code": "// Create a new instance of Min\nconst min = new Min();\n\n// Add items to the heap\nmin.add(1);\nmin.add(2);\nmin.add(3);\nmin.add(4);\nmin.add(5);\n\n// Perform a heapifyUp operation\nmin.heapifyUp();\n",
+              "description": ""
+            },
+            "name": "heapifyUp",
+            "location": {
+              "start": 45,
+              "insert": 45,
+              "offset": "\t",
+              "indent": 2,
+              "comment": null
+            },
+            "item_type": "function",
+            "length": 10,
+            "docLength": null
+          },
+          {
+            "id": "f4f8432f-0ac4-94a9-3a4d-5af219f91fa8",
+            "ancestors": [
+              "cb3312f8-ef99-eb99-894d-468dc8504abf"
+            ],
+            "description": "Rearranges elements in a heap-like data structure to maintain the heap property at each level of the tree. It recursively descends into the tree, swapping larger elements with smaller child elements until the entire tree is properly ordered.",
+            "params": [],
+            "usage": null,
+            "name": "heapifyDown",
+            "location": {
+              "start": 56,
+              "insert": 56,
+              "offset": "\t",
+              "indent": 2,
+              "comment": null
+            },
+            "item_type": "function",
+            "length": 15,
+            "docLength": null
+          },
+          {
+            "id": "618575d6-944c-8bb3-024a-c1a54e43b2e4",
+            "ancestors": [],
+            "description": "Extends `Heap` and provides `heapifyUp()` and `heapifyDown()` methods to maintain a maximum heap data structure.",
+            "interfaces": [],
+            "superclass": "Heap",
+            "is_abstract": false,
+            "fields": [],
+            "name": "Max",
+            "location": {
+              "start": 73,
+              "insert": 73,
+              "offset": "\t",
+              "indent": 1,
+              "comment": null
+            },
+            "item_type": "class",
+            "length": 28,
+            "docLength": null
+          },
+          {
+            "id": "8c09466e-983d-e18c-e54b-3daf2a79b91e",
+            "ancestors": [
+              "618575d6-944c-8bb3-024a-c1a54e43b2e4"
+            ],
+            "description": "Rearranges the elements of an array in descending order based on their priority, ensuring that the most important element is at the top of the heap.",
+            "params": [],
+            "usage": {
+              "language": "typescript",
+              "code": "const max = new Max();\n\tmax.push(4);\n\tmax.push(1);\n\tmax.push(3);\n\tmax.push(2);\n\tmax.heapifyUp();\n",
+              "description": ""
+            },
+            "name": "heapifyUp",
+            "location": {
+              "start": 74,
+              "insert": 74,
+              "offset": "\t",
+              "indent": 2,
+              "comment": null
+            },
+            "item_type": "function",
+            "length": 10,
+            "docLength": null
+          },
+          {
+            "id": "4fce15f3-23f1-59b5-d544-4dccccf2dce2",
+            "ancestors": [
+              "618575d6-944c-8bb3-024a-c1a54e43b2e4"
+            ],
+            "description": "Rearranges elements in a heap data structure to maintain the heap property, starting from the root node and working downward.",
+            "params": [],
+            "usage": {
+              "language": "typescript",
+              "code": "// Example of how the Max class can be instantiated and used\nconst max = new Max();\nmax.push(3); // Add element to the heap\nmax.push(5);\nmax.push(2);\nmax.push(1);\nmax.heapifyDown(); // Heapify down elements after pushes\n",
+              "description": ""
+            },
+            "name": "heapifyDown",
+            "location": {
+              "start": 85,
+              "insert": 85,
+              "offset": "\t",
+              "indent": 2,
+              "comment": null
+            },
+            "item_type": "function",
+            "length": 15,
+            "docLength": null
+          }
+        ]
+      }
+    }
+  }
+]
